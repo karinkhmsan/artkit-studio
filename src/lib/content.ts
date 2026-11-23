@@ -29,6 +29,16 @@ const translations = {
     footerDescription: "A thoughtful little corner of the internet for artists.", footerNav: "EXPLORE", footerLegal: "INFORMATION",
     about: "About", privacy: "Privacy Policy", terms: "Terms of Service", howToUse: "How to Use",
     copyright: "Made with care for artists everywhere.", footerNote: "Create at your own pace.", backToStudio: "Back to studio",
+    donate: {
+      button: "Support", buttonLabel: "Support the creator", footerLink: "Support the creator", close: "Close",
+      title: "Support the creator",
+      body: [
+        "Thanks for using ArtKit Studio! It's a small passion project made for artists like you.",
+        "Donations help keep the tools free and cover hosting. Giving is totally optional, and every bit is appreciated.",
+      ],
+      cta: "Donate via Easy Donate", newTab: "(opens in a new tab)", later: "Maybe later",
+      note: "Donations are handled by Easy Donate. This site never sees your payment details.",
+    },
     info: {
       about: { eyebrow: "OUR STORY", title: "A little more room for creativity.", intro: "ArtKit Studio is a simple, distraction-free home for the small rituals that help artists make things.", sections: [
         { title: "Why we're here", body: "Good creative tools should make room for the work, not get in its way. This studio brings gesture practice, color exploration, and idea planning into one calm place." },
@@ -40,6 +50,7 @@ const translations = {
         { title: "Your artwork", body: "The palette checker and the share card read your image inside your browser. The image is never uploaded to our servers and is gone when you close or refresh the page. If you choose to share, the post is made on X, Facebook or Instagram under their own privacy policies." },
         { title: "Advertising and third parties", body: "This site can show ads through Google AdSense when ads are switched on. Google may use cookies or similar technology to show and measure ads, under its own privacy policy. Ad areas stay empty when ads are off. Please add a cookie consent notice if you serve ads to visitors in regions that require it." },
         { title: "Reference photos", body: "If you choose Pexels photos in the timer, your browser loads pictures from Pexels, which can see your IP address under its own privacy policy. Pictures you choose from your own device never leave your browser." },
+        { title: "Donations", body: "If you choose to donate, you are taken to Easy Donate, which processes the payment under its own terms and privacy policy. This site does not collect or store any payment information." },
         { title: "Questions", body: "This is a preview project. No user accounts, contact form, or personal-data collection service is offered here." },
       ] },
       terms: { eyebrow: "THE DETAILS", title: "Simple terms, clearly stated.", intro: "By using this preview of ArtKit Studio, you agree to these basic terms.", sections: [
@@ -76,6 +87,16 @@ const translations = {
     footerDescription: "มุมเล็ก ๆ ที่ใส่ใจสำหรับศิลปินบนโลกออนไลน์", footerNav: "สำรวจ", footerLegal: "ข้อมูล",
     about: "เกี่ยวกับเรา", privacy: "นโยบายความเป็นส่วนตัว", terms: "ข้อกำหนดการใช้งาน", howToUse: "วิธีใช้งาน",
     copyright: "สร้างด้วยความใส่ใจเพื่อศิลปินทุกคน", footerNote: "สร้างสรรค์ในจังหวะของคุณ", backToStudio: "กลับไปที่สตูดิโอ",
+    donate: {
+      button: "สนับสนุน", buttonLabel: "สนับสนุนผู้สร้าง", footerLink: "ร่วมสนับสนุนผู้สร้าง", close: "ปิด",
+      title: "ร่วมสนับสนุนผู้สร้าง",
+      body: [
+        "ขอบคุณที่แวะมาใช้ ArtKit Studio นะ เว็บนี้เป็นโปรเจกต์เล็ก ๆ ที่ทำขึ้นเพื่อศิลปินอย่างคุณ",
+        "ทุกการสนับสนุนช่วยให้เครื่องมือใช้งานฟรีต่อไปได้ และช่วยค่าโฮสติ้งของเว็บ จะสนับสนุนหรือไม่ก็ได้ทั้งนั้น ได้ใช้งานก็ดีใจแล้ว",
+      ],
+      cta: "สนับสนุนผ่าน Easy Donate", newTab: "(เปิดในแท็บใหม่)", later: "ไว้คราวหน้า",
+      note: "การบริจาคดำเนินการโดย Easy Donate เว็บไซต์นี้ไม่เห็นข้อมูลการชำระเงินของคุณ",
+    },
     info: {
       about: { eyebrow: "เรื่องราวของเรา", title: "เพิ่มพื้นที่ให้ความคิดสร้างสรรค์", intro: "ArtKit Studio คือพื้นที่เรียบง่ายไร้สิ่งรบกวน สำหรับกิจวัตรเล็ก ๆ ที่ช่วยให้ศิลปินสร้างผลงาน", sections: [
         { title: "ทำไมเราจึงสร้างที่นี่", body: "เครื่องมือที่ดีควรเปิดพื้นที่ให้ผลงาน ไม่ใช่ขัดขวางการทำงาน สตูดิโอนี้รวมการฝึกวาด การสำรวจสี และการวางแผนไอเดียไว้ในที่เดียว" },
@@ -87,6 +108,7 @@ const translations = {
         { title: "ผลงานของคุณ", body: "เครื่องมือเช็กสีและการ์ดแชร์อ่านรูปภายในเบราว์เซอร์ของคุณเท่านั้น รูปไม่ถูกอัปโหลดไปยังเซิร์ฟเวอร์ของเรา และจะหายไปเมื่อคุณปิดหรือรีเฟรชหน้า หากเลือกแชร์ โพสต์จะเกิดบน X, Facebook หรือ Instagram ตามนโยบายความเป็นส่วนตัวของแต่ละแพลตฟอร์ม" },
         { title: "โฆษณาและบุคคลภายนอก", body: "เว็บไซต์นี้อาจแสดงโฆษณาผ่าน Google AdSense เมื่อเปิดใช้โฆษณา Google อาจใช้คุกกี้หรือเทคโนโลยีใกล้เคียงเพื่อแสดงและวัดผลโฆษณา ตามนโยบายความเป็นส่วนตัวของ Google หากปิดโฆษณา พื้นที่โฆษณาจะว่างเปล่า โปรดเพิ่มแบนเนอร์ขอความยินยอมคุกกี้หากแสดงโฆษณาให้ผู้เข้าชมในภูมิภาคที่กฎหมายกำหนด" },
         { title: "รูปอ้างอิง", body: "หากเลือกรูปจาก Pexels ในเครื่องมือจับเวลา เบราว์เซอร์ของคุณจะโหลดรูปจาก Pexels ซึ่งอาจเห็นที่อยู่ IP ของคุณตามนโยบายความเป็นส่วนตัวของ Pexels ส่วนรูปที่เลือกจากเครื่องของคุณจะไม่ออกจากเบราว์เซอร์" },
+        { title: "การบริจาค", body: "หากคุณเลือกสนับสนุน ระบบจะพาไปยัง Easy Donate ซึ่งดำเนินการชำระเงินตามข้อกำหนดและนโยบายความเป็นส่วนตัวของ Easy Donate เอง เว็บไซต์นี้ไม่เก็บรวบรวมหรือจัดเก็บข้อมูลการชำระเงินใด ๆ" },
         { title: "ข้อสงสัย", body: "นี่คือโครงการรุ่นตัวอย่าง ยังไม่มีบัญชีผู้ใช้ แบบฟอร์มติดต่อ หรือบริการเก็บข้อมูลส่วนบุคคล" },
       ] },
       terms: { eyebrow: "รายละเอียด", title: "ข้อกำหนดที่เรียบง่ายและชัดเจน", intro: "การใช้งาน ArtKit Studio รุ่นตัวอย่างนี้ถือว่าคุณยอมรับข้อกำหนดพื้นฐานต่อไปนี้", sections: [
