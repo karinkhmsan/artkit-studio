@@ -1,3 +1,6 @@
+// The donate feature is OFF unless NEXT_PUBLIC_DONATE_ENABLED is exactly "true".
+export const donateEnabled = process.env.NEXT_PUBLIC_DONATE_ENABLED === "true";
+
 export type Language = "en" | "th";
 export type ToolId = "timer" | "palette" | "prompt";
 export type InfoId = "about" | "privacy" | "terms" | "how-to-use";
@@ -50,7 +53,7 @@ const translations = {
         { title: "Your artwork", body: "The palette checker and the share card read your image inside your browser. The image is never uploaded to our servers and is gone when you close or refresh the page. If you choose to share, the post is made on X, Facebook or Instagram under their own privacy policies." },
         { title: "Advertising and third parties", body: "This site can show ads through Google AdSense when ads are switched on. Google may use cookies or similar technology to show and measure ads, under its own privacy policy. Ad areas stay empty when ads are off. Please add a cookie consent notice if you serve ads to visitors in regions that require it." },
         { title: "Reference photos", body: "If you choose Pexels photos in the timer, your browser loads pictures from Pexels, which can see your IP address under its own privacy policy. Pictures you choose from your own device never leave your browser." },
-        { title: "Donations", body: "If you choose to donate, you are taken to Easy Donate, which processes the payment under its own terms and privacy policy. This site does not collect or store any payment information." },
+        ...(donateEnabled ? [{ title: "Donations", body: "If you choose to donate, you are taken to Easy Donate, which processes the payment under its own terms and privacy policy. This site does not collect or store any payment information." }] : []),
         { title: "Questions", body: "This is a preview project. No user accounts, contact form, or personal-data collection service is offered here." },
       ] },
       terms: { eyebrow: "THE DETAILS", title: "Simple terms, clearly stated.", intro: "By using this preview of ArtKit Studio, you agree to these basic terms.", sections: [
@@ -108,7 +111,7 @@ const translations = {
         { title: "ผลงานของคุณ", body: "เครื่องมือเช็กสีและการ์ดแชร์อ่านรูปภายในเบราว์เซอร์ของคุณเท่านั้น รูปไม่ถูกอัปโหลดไปยังเซิร์ฟเวอร์ของเรา และจะหายไปเมื่อคุณปิดหรือรีเฟรชหน้า หากเลือกแชร์ โพสต์จะเกิดบน X, Facebook หรือ Instagram ตามนโยบายความเป็นส่วนตัวของแต่ละแพลตฟอร์ม" },
         { title: "โฆษณาและบุคคลภายนอก", body: "เว็บไซต์นี้อาจแสดงโฆษณาผ่าน Google AdSense เมื่อเปิดใช้โฆษณา Google อาจใช้คุกกี้หรือเทคโนโลยีใกล้เคียงเพื่อแสดงและวัดผลโฆษณา ตามนโยบายความเป็นส่วนตัวของ Google หากปิดโฆษณา พื้นที่โฆษณาจะว่างเปล่า โปรดเพิ่มแบนเนอร์ขอความยินยอมคุกกี้หากแสดงโฆษณาให้ผู้เข้าชมในภูมิภาคที่กฎหมายกำหนด" },
         { title: "รูปอ้างอิง", body: "หากเลือกรูปจาก Pexels ในเครื่องมือจับเวลา เบราว์เซอร์ของคุณจะโหลดรูปจาก Pexels ซึ่งอาจเห็นที่อยู่ IP ของคุณตามนโยบายความเป็นส่วนตัวของ Pexels ส่วนรูปที่เลือกจากเครื่องของคุณจะไม่ออกจากเบราว์เซอร์" },
-        { title: "การบริจาค", body: "หากคุณเลือกสนับสนุน ระบบจะพาไปยัง Easy Donate ซึ่งดำเนินการชำระเงินตามข้อกำหนดและนโยบายความเป็นส่วนตัวของ Easy Donate เอง เว็บไซต์นี้ไม่เก็บรวบรวมหรือจัดเก็บข้อมูลการชำระเงินใด ๆ" },
+        ...(donateEnabled ? [{ title: "การบริจาค", body: "หากคุณเลือกสนับสนุน ระบบจะพาไปยัง Easy Donate ซึ่งดำเนินการชำระเงินตามข้อกำหนดและนโยบายความเป็นส่วนตัวของ Easy Donate เอง เว็บไซต์นี้ไม่เก็บรวบรวมหรือจัดเก็บข้อมูลการชำระเงินใด ๆ" }] : []),
         { title: "ข้อสงสัย", body: "นี่คือโครงการรุ่นตัวอย่าง ยังไม่มีบัญชีผู้ใช้ แบบฟอร์มติดต่อ หรือบริการเก็บข้อมูลส่วนบุคคล" },
       ] },
       terms: { eyebrow: "รายละเอียด", title: "ข้อกำหนดที่เรียบง่ายและชัดเจน", intro: "การใช้งาน ArtKit Studio รุ่นตัวอย่างนี้ถือว่าคุณยอมรับข้อกำหนดพื้นฐานต่อไปนี้", sections: [

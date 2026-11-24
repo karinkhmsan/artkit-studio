@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { ArrowUpRight, Brush, Heart, Moon, Sun } from "lucide-react";
 import { DonateDialog } from "@/components/donate-dialog";
-import { getCopy, infoIds, infoLabelKey, toolIds, type Language, type ToolId } from "@/lib/content";
+import { donateEnabled, getCopy, infoIds, infoLabelKey, toolIds, type Language, type ToolId } from "@/lib/content";
 
 type StudioContextValue = {
   language: Language;
@@ -88,9 +88,11 @@ export function StudioShell({ children }: { children: React.ReactNode }) {
                 <span aria-hidden="true">/</span>
                 <button type="button" onClick={() => updateLanguage("th")} className={language === "th" ? "chosen" : ""} aria-pressed={language === "th"}>TH</button>
               </div>
-              <button type="button" className="support-button" onClick={openDonate} aria-label={copy.donate.buttonLabel} title={copy.donate.buttonLabel}>
-                <Heart size={18} aria-hidden="true" /><span>{copy.donate.button}</span>
-              </button>
+              {donateEnabled && (
+                <button type="button" className="support-button" onClick={openDonate} aria-label={copy.donate.buttonLabel} title={copy.donate.buttonLabel}>
+                  <Heart size={18} aria-hidden="true" /><span>{copy.donate.button}</span>
+                </button>
+              )}
               <span className="header-divider" aria-hidden="true" />
               <button type="button" className="theme-button" onClick={updateTheme} aria-label={theme === "dark" ? copy.lightMode : copy.darkMode} title={theme === "dark" ? copy.lightMode : copy.darkMode}>
                 {theme === "dark" ? <Sun size={18} aria-hidden="true" /> : <Moon size={18} aria-hidden="true" />}
@@ -108,11 +110,11 @@ export function StudioShell({ children }: { children: React.ReactNode }) {
               <p>{copy.footerDescription}</p>
             </div>
             <div className="footer-links"><h2>{copy.footerNav}</h2>{toolIds.map((tool) => <button key={tool} type="button" onClick={() => selectTool(tool)}>{copy[`${tool}Full`]}</button>)}</div>
-            <div className="footer-links"><h2>{copy.footerLegal}</h2>{infoIds.map((id) => <Link key={id} href={`/${id}`}>{copy[infoLabelKey[id]]} <ArrowUpRight size={13} aria-hidden="true" /></Link>)}<button type="button" onClick={openDonate}><Heart size={15} aria-hidden="true" />{copy.donate.footerLink}</button></div>
+            <div className="footer-links"><h2>{copy.footerLegal}</h2>{infoIds.map((id) => <Link key={id} href={`/${id}`}>{copy[infoLabelKey[id]]} <ArrowUpRight size={13} aria-hidden="true" /></Link>)}{donateEnabled && <button type="button" onClick={openDonate}><Heart size={15} aria-hidden="true" />{copy.donate.footerLink}</button>}</div>
           </div>
           <div className="page-width footer-bottom"><span>© {new Date().getFullYear()} ArtKit Studio. {copy.copyright}</span><span>{copy.footerNote} ✳</span></div>
         </footer>
-        <DonateDialog copy={copy.donate} open={donateOpen} onClose={() => setDonateOpen(false)} returnFocusRef={donateOpener} />
+        {donateEnabled && <DonateDialog copy={copy.donate} open={donateOpen} onClose={() => setDonateOpen(false)} returnFocusRef={donateOpener} />}
       </div>
     </StudioContext.Provider>
   );
